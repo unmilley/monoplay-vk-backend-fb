@@ -1,0 +1,460 @@
+{
+  "streets": {
+    "brown": [
+      {
+        "housePrice": 50,
+        "isPledged": false,
+        "name": "Житная",
+        "owner": 0,
+        "pledge": 30,
+        "price": 60,
+        "redemption": 30,
+        "rent": {
+          "1empty": { "bought": false, "count": 2 },
+          "2color": { "bought": false, "count": 4 },
+          "3houseOne": { "bought": false, "count": 10 },
+          "4houseTwo": { "bought": false, "count": 30 },
+          "5houseThree": { "bought": false, "count": 90 },
+          "6houseFour": { "bought": false, "count": 160 },
+          "7hotel": { "bought": false, "count": 250 }
+        },
+        "color": "brown",
+        "path": "brown/0"
+      },
+      {
+        "housePrice": 50,
+        "isPledged": false,
+        "name": "Нагатинская",
+        "owner": 0,
+        "pledge": 30,
+        "price": 60,
+        "redemption": 30,
+        "rent": {
+          "1empty": { "bought": false, "count": 4 },
+          "2color": { "bought": false, "count": 8 },
+          "3houseOne": { "bought": false, "count": 20 },
+          "4houseTwo": { "bought": false, "count": 60 },
+          "5houseThree": { "bought": false, "count": 180 },
+          "6houseFour": { "bought": false, "count": 320 },
+          "7hotel": { "bought": false, "count": 450 }
+        },
+        "color": "brown",
+        "path": "brown/1"
+      }
+    ],
+    "lightBlue": [
+      {
+        "housePrice": 50,
+        "isPledged": false,
+        "name": "Варшавское шоссе",
+        "owner": 0,
+        "pledge": 50,
+        "price": 100,
+        "redemption": 50,
+        "rent": {
+          "1empty": { "bought": false, "count": 6 },
+          "2color": { "bought": false, "count": 12 },
+          "3houseOne": { "bought": false, "count": 30 },
+          "4houseTwo": { "bought": false, "count": 90 },
+          "5houseThree": { "bought": false, "count": 270 },
+          "6houseFour": { "bought": false, "count": 400 },
+          "7hotel": { "bought": false, "count": 550 }
+        },
+        "color": "lightBlue",
+        "path": "lightBlue/0"
+      },
+      {
+        "housePrice": 50,
+        "isPledged": false,
+        "name": "Огарёва",
+        "owner": 0,
+        "pledge": 50,
+        "price": 100,
+        "redemption": 50,
+        "rent": {
+          "1empty": { "bought": false, "count": 6 },
+          "2color": { "bought": false, "count": 12 },
+          "3houseOne": { "bought": false, "count": 30 },
+          "4houseTwo": { "bought": false, "count": 90 },
+          "5houseThree": { "bought": false, "count": 270 },
+          "6houseFour": { "bought": false, "count": 400 },
+          "7hotel": { "bought": false, "count": 550 }
+        },
+        "color": "lightBlue",
+        "path": "lightBlue/2"
+      },
+      {
+        "housePrice": 50,
+        "isPledged": false,
+        "name": "Первая парковая",
+        "owner": 0,
+        "pledge": 60,
+        "price": 120,
+        "redemption": 60,
+        "rent": {
+          "1empty": { "bought": false, "count": 8 },
+          "2color": { "bought": false, "count": 16 },
+          "3houseOne": { "bought": false, "count": 40 },
+          "4houseTwo": { "bought": false, "count": 100 },
+          "5houseThree": { "bought": false, "count": 300 },
+          "6houseFour": { "bought": false, "count": 450 },
+          "7hotel": { "bought": false, "count": 600 }
+        },
+        "color": "lightBlue",
+        "path": "lightBlue/1"
+      }
+    ],
+    "pink": [
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Полянка",
+        "owner": 0,
+        "pledge": 70,
+        "price": 140,
+        "redemption": 70,
+        "rent": {
+          "1empty": { "bought": false, "count": 10 },
+          "2color": { "bought": false, "count": 20 },
+          "3houseOne": { "bought": false, "count": 50 },
+          "4houseTwo": { "bought": false, "count": 150 },
+          "5houseThree": { "bought": false, "count": 450 },
+          "6houseFour": { "bought": false, "count": 625 },
+          "7hotel": { "bought": false, "count": 750 }
+        },
+        "color": "pink",
+        "path": "pink/0"
+      },
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Сре́тенка",
+        "owner": 0,
+        "pledge": 70,
+        "price": 140,
+        "redemption": 70,
+        "rent": {
+          "1empty": { "bought": false, "count": 10 },
+          "2color": { "bought": false, "count": 20 },
+          "3houseOne": { "bought": false, "count": 50 },
+          "4houseTwo": { "bought": false, "count": 150 },
+          "5houseThree": { "bought": false, "count": 450 },
+          "6houseFour": { "bought": false, "count": 625 },
+          "7hotel": { "bought": false, "count": 750 }
+        },
+        "color": "pink",
+        "path": "pink/1"
+      },
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Ростовская",
+        "owner": 0,
+        "pledge": 80,
+        "price": 160,
+        "redemption": 80,
+        "rent": {
+          "1empty": { "bought": false, "count": 12 },
+          "2color": { "bought": false, "count": 24 },
+          "3houseOne": { "bought": false, "count": 60 },
+          "4houseTwo": { "bought": false, "count": 180 },
+          "5houseThree": { "bought": false, "count": 500 },
+          "6houseFour": { "bought": false, "count": 700 },
+          "7hotel": { "bought": false, "count": 900 }
+        },
+        "color": "pink",
+        "path": "pink/2"
+      }
+    ],
+    "orange": [
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Рязанский проспект",
+        "owner": 0,
+        "pledge": 90,
+        "price": 180,
+        "redemption": 90,
+        "rent": {
+          "1empty": { "bought": false, "count": 14 },
+          "2color": { "bought": false, "count": 28 },
+          "3houseOne": { "bought": false, "count": 70 },
+          "4houseTwo": { "bought": false, "count": 200 },
+          "5houseThree": { "bought": false, "count": 550 },
+          "6houseFour": { "bought": false, "count": 750 },
+          "7hotel": { "bought": false, "count": 950 }
+        },
+        "color": "orange",
+        "path": "orange/0"
+      },
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Вавилова",
+        "owner": 0,
+        "pledge": 90,
+        "price": 180,
+        "redemption": 90,
+        "rent": {
+          "1empty": { "bought": false, "count": 14 },
+          "2color": { "bought": false, "count": 28 },
+          "3houseOne": { "bought": false, "count": 70 },
+          "4houseTwo": { "bought": false, "count": 200 },
+          "5houseThree": { "bought": false, "count": 550 },
+          "6houseFour": { "bought": false, "count": 750 },
+          "7hotel": { "bought": false, "count": 950 }
+        },
+        "color": "orange",
+        "path": "orange/1"
+      },
+      {
+        "housePrice": 100,
+        "isPledged": false,
+        "name": "Рублевское шоссе",
+        "owner": 0,
+        "pledge": 100,
+        "price": 200,
+        "redemption": 100,
+        "rent": {
+          "1empty": { "bought": false, "count": 16 },
+          "2color": { "bought": false, "count": 32 },
+          "3houseOne": { "bought": false, "count": 80 },
+          "4houseTwo": { "bought": false, "count": 220 },
+          "5houseThree": { "bought": false, "count": 600 },
+          "6houseFour": { "bought": false, "count": 800 },
+          "7hotel": { "bought": false, "count": 1000 }
+        },
+        "color": "orange",
+        "path": "orange/2"
+      }
+    ],
+    "red": [
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Тверская",
+        "owner": 0,
+        "pledge": 110,
+        "price": 220,
+        "redemption": 110,
+        "rent": {
+          "1empty": { "bought": false, "count": 18 },
+          "2color": { "bought": false, "count": 36 },
+          "3houseOne": { "bought": false, "count": 90 },
+          "4houseTwo": { "bought": false, "count": 250 },
+          "5houseThree": { "bought": false, "count": 700 },
+          "6houseFour": { "bought": false, "count": 875 },
+          "7hotel": { "bought": false, "count": 1050 }
+        },
+        "color": "red",
+        "path": "red/0"
+      },
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Пушкинская",
+        "owner": 0,
+        "pledge": 110,
+        "price": 220,
+        "redemption": 110,
+        "rent": {
+          "1empty": { "bought": false, "count": 18 },
+          "2color": { "bought": false, "count": 36 },
+          "3houseOne": { "bought": false, "count": 90 },
+          "4houseTwo": { "bought": false, "count": 250 },
+          "5houseThree": { "bought": false, "count": 700 },
+          "6houseFour": { "bought": false, "count": 875 },
+          "7hotel": { "bought": false, "count": 1050 }
+        },
+        "color": "red",
+        "path": "red/1"
+      },
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Площадь Маяковского",
+        "owner": 0,
+        "pledge": 120,
+        "price": 240,
+        "redemption": 120,
+        "rent": {
+          "1empty": { "bought": false, "count": 20 },
+          "2color": { "bought": false, "count": 40 },
+          "3houseOne": { "bought": false, "count": 100 },
+          "4houseTwo": { "bought": false, "count": 300 },
+          "5houseThree": { "bought": false, "count": 750 },
+          "6houseFour": { "bought": false, "count": 925 },
+          "7hotel": { "bought": false, "count": 1100 }
+        },
+        "color": "red",
+        "path": "red/2"
+      }
+    ],
+    "yellow": [
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Грузинский вал",
+        "owner": 0,
+        "pledge": 130,
+        "price": 260,
+        "redemption": 130,
+        "rent": {
+          "1empty": { "bought": false, "count": 22 },
+          "2color": { "bought": false, "count": 44 },
+          "3houseOne": { "bought": false, "count": 110 },
+          "4houseTwo": { "bought": false, "count": 330 },
+          "5houseThree": { "bought": false, "count": 800 },
+          "6houseFour": { "bought": false, "count": 975 },
+          "7hotel": { "bought": false, "count": 1150 }
+        },
+        "color": "yellow",
+        "path": "yellow/0"
+      },
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Новинский бульвар",
+        "owner": 0,
+        "pledge": 130,
+        "price": 260,
+        "redemption": 130,
+        "rent": {
+          "1empty": { "bought": false, "count": 22 },
+          "2color": { "bought": false, "count": 44 },
+          "3houseOne": { "bought": false, "count": 110 },
+          "4houseTwo": { "bought": false, "count": 330 },
+          "5houseThree": { "bought": false, "count": 800 },
+          "6houseFour": { "bought": false, "count": 975 },
+          "7hotel": { "bought": false, "count": 1150 }
+        },
+        "color": "yellow",
+        "path": "yellow/1"
+      },
+      {
+        "housePrice": 150,
+        "isPledged": false,
+        "name": "Смоленская площадь",
+        "owner": 0,
+        "pledge": 140,
+        "price": 280,
+        "redemption": 140,
+        "rent": {
+          "1empty": { "bought": false, "count": 24 },
+          "2color": { "bought": false, "count": 48 },
+          "3houseOne": { "bought": false, "count": 120 },
+          "4houseTwo": { "bought": false, "count": 360 },
+          "5houseThree": { "bought": false, "count": 850 },
+          "6houseFour": { "bought": false, "count": 1025 },
+          "7hotel": { "bought": false, "count": 1200 }
+        },
+        "color": "yellow",
+        "path": "yellow/2"
+      }
+    ],
+    "green": [
+      {
+        "housePrice": 200,
+        "isPledged": false,
+        "name": "Щусева",
+        "owner": 0,
+        "pledge": 150,
+        "price": 300,
+        "redemption": 150,
+        "rent": {
+          "1empty": { "bought": false, "count": 26 },
+          "2color": { "bought": false, "count": 52 },
+          "3houseOne": { "bought": false, "count": 130 },
+          "4houseTwo": { "bought": false, "count": 390 },
+          "5houseThree": { "bought": false, "count": 900 },
+          "6houseFour": { "bought": false, "count": 1100 },
+          "7hotel": { "bought": false, "count": 1275 }
+        },
+        "color": "green",
+        "path": "green/0"
+      },
+      {
+        "housePrice": 200,
+        "isPledged": false,
+        "name": "Гоголевский бульвар",
+        "owner": 0,
+        "pledge": 150,
+        "price": 300,
+        "redemption": 150,
+        "rent": {
+          "1empty": { "bought": false, "count": 26 },
+          "2color": { "bought": false, "count": 52 },
+          "3houseOne": { "bought": false, "count": 130 },
+          "4houseTwo": { "bought": false, "count": 390 },
+          "5houseThree": { "bought": false, "count": 900 },
+          "6houseFour": { "bought": false, "count": 1100 },
+          "7hotel": { "bought": false, "count": 1275 }
+        },
+        "color": "green",
+        "path": "green/1"
+      },
+      {
+        "housePrice": 200,
+        "isPledged": false,
+        "name": "Кутузовский проспект",
+        "owner": 0,
+        "pledge": 160,
+        "price": 320,
+        "redemption": 160,
+        "rent": {
+          "1empty": { "bought": false, "count": 28 },
+          "2color": { "bought": false, "count": 56 },
+          "3houseOne": { "bought": false, "count": 150 },
+          "4houseTwo": { "bought": false, "count": 450 },
+          "5houseThree": { "bought": false, "count": 1000 },
+          "6houseFour": { "bought": false, "count": 1200 },
+          "7hotel": { "bought": false, "count": 1400 }
+        },
+        "color": "green",
+        "path": "green/2"
+      }
+    ],
+    "blue": [
+      {
+        "housePrice": 200,
+        "isPledged": false,
+        "name": "Арбат",
+        "owner": 0,
+        "pledge": 200,
+        "price": 400,
+        "redemption": 200,
+        "rent": {
+          "1empty": { "bought": false, "count": 50 },
+          "2color": { "bought": false, "count": 100 },
+          "3houseOne": { "bought": false, "count": 200 },
+          "4houseTwo": { "bought": false, "count": 600 },
+          "5houseThree": { "bought": false, "count": 1400 },
+          "6houseFour": { "bought": false, "count": 1700 },
+          "7hotel": { "bought": false, "count": 2000 }
+        },
+        "color": "blue",
+        "path": "blue/0"
+      },
+      {
+        "housePrice": 200,
+        "isPledged": false,
+        "name": "Малая бронная",
+        "owner": 0,
+        "pledge": 175,
+        "price": 350,
+        "redemption": 175,
+        "rent": {
+          "1empty": { "bought": false, "count": 35 },
+          "2color": { "bought": false, "count": 70 },
+          "3houseOne": { "bought": false, "count": 175 },
+          "4houseTwo": { "bought": false, "count": 500 },
+          "5houseThree": { "bought": false, "count": 1100 },
+          "6houseFour": { "bought": false, "count": 1300 },
+          "7hotel": { "bought": false, "count": 1500 }
+        },
+        "color": "blue",
+        "path": "blue/1"
+      }
+    ]
+  }
+}

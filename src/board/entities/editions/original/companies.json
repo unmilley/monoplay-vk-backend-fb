@@ -1,0 +1,24 @@
+{
+  "companies": [
+    {
+      "name": "Электростанция",
+      "owner": 0,
+      "path": "0",
+      "price": 150,
+      "pledge": 75,
+      "redemption": 75,
+      "isPledged": false,
+      "rent": ["x4", "x10"]
+    },
+    {
+      "name": "Водопровод",
+      "owner": 0,
+      "path": "1",
+      "price": 150,
+      "pledge": 75,
+      "redemption": 75,
+      "isPledged": false,
+      "rent": ["x4", "x10"]
+    }
+  ]
+}

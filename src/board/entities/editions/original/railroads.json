@@ -1,0 +1,44 @@
+{
+  "railroads": [
+    {
+      "name": "Ленинградская ЖД",
+      "path": "0",
+      "owner": 0,
+      "price": 200,
+      "pledge": 100,
+      "redemption": 100,
+      "isPledged": false,
+      "rent": [25, 50, 100, 200]
+    },
+    {
+      "name": "Рижская ЖД",
+      "path": "1",
+      "owner": 0,
+      "price": 200,
+      "pledge": 100,
+      "redemption": 100,
+      "isPledged": false,
+      "rent": [25, 50, 100, 200]
+    },
+    {
+      "name": "Курская ЖД",
+      "path": "2",
+      "owner": 0,
+      "price": 200,
+      "pledge": 100,
+      "redemption": 100,
+      "isPledged": false,
+      "rent": [25, 50, 100, 200]
+    },
+    {
+      "name": "Казанская ЖД",
+      "path": "3",
+      "owner": 0,
+      "price": 200,
+      "pledge": 100,
+      "redemption": 100,
+      "isPledged": false,
+      "rent": [25, 50, 100, 200]
+    }
+  ]
+}
