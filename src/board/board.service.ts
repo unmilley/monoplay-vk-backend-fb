@@ -6,7 +6,7 @@ import { FirebaseService, type Database } from '@firebase/firebase.service'
 import { GamerService } from '@gamer/gamer.service'
 import { UserService } from '@user/user.service'
 
-import { EDITION, Fields, Room, User } from '@types'
+import { EDITION, type Fields, type Room, type User } from '@types'
 import { BoardRoomDto, CreateBoardDto } from './dto'
 import { OriginalEdition, OriginalEdition as OriginalEdition2 } from './entities/editions'
 
@@ -94,10 +94,12 @@ export class BoardService {
     const gamers = Object.values(board.gamers)
 
     const dice = board.dice ?? []
+    const confirmation = board.confirmation ? Object.values(board.confirmation) : undefined
     delete board.gamers
     delete board.dice
+    delete board.confirmation
 
-    return asString ? JSON.stringify({ board, gamers, dice }) : { board, gamers, dice }
+    return asString ? JSON.stringify({ board, gamers, dice, confirmation }) : { board, gamers, dice, confirmation }
   }
   async initRoomByRoom(room: number, asString = true) {
     const board: Room = await this.getDB(`rooms/${room}`)
@@ -105,9 +107,11 @@ export class BoardService {
     const gamers = Object.values(board.gamers)
 
     const dice = board.dice ?? []
+    const confirmation = board.confirmation ? Object.values(board.confirmation) : undefined
     delete board.gamers
     delete board.dice
+    delete board.confirmation
 
-    return asString ? JSON.stringify({ board, gamers, dice }) : { board, gamers, dice }
+    return asString ? JSON.stringify({ board, gamers, dice, confirmation }) : { board, gamers, dice, confirmation }
   }
 }

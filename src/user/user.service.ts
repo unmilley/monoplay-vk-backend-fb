@@ -39,5 +39,8 @@ export class UserService {
   async update(updateUserDto: UpdateUserDto) {
     const { id } = updateUserDto
     await this.database.ref(`users/${id}`).update(updateUserDto)
+
+    const user = await this.get(id)
+    if (user) return user
   }
 }

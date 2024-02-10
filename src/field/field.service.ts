@@ -2,7 +2,15 @@ import { checkSimilarStreets } from '@common/utils'
 import { FirebaseService, type Database } from '@firebase/firebase.service'
 import { Injectable } from '@nestjs/common'
 import type { Company, Railroad, Rents, Street, Streets } from '@types'
-import { BuyDto, BuyPropertyDto, UpdateBoardCompanies, UpdateBoardRailroad, UpdateBoardStreet } from './dto'
+import {
+  BuyDto,
+  BuyPropertyDto,
+  UpdateBoardCompanies,
+  UpdateBoardRailroad,
+  UpdateBoardStreet,
+  type PledgeDto,
+  type RedemptionDto,
+} from './dto'
 
 @Injectable()
 export class FieldService {
@@ -89,5 +97,56 @@ export class FieldService {
       if (key === '1empty') continue
       if (bought) await this.database.ref(`rooms/${room}/streets/${path}/rent/${key}/bought`).set(false)
     }
+  }
+
+  private foldRent(rent: Rents) {
+    return Object.values(rent).filter(({ bought }) => bought).length - 2
+  }
+
+  async pledgeStreet(pledgeDto: PledgeDto) {
+    const { room, path } = pledgeDto
+
+    await this.database.ref(`rooms/${room}/${path}/isPledged`).set(true)
+    const street: Street = await this.getDB(`rooms/${room}/${path}`)
+    const fold = this.foldRent(street.rent)
+
+    await this.updateStreet({ path, room, street })
+
+    await this.reloadBoughtColor(room, path)
+    await this.foldOtherRent(room, street.rent, path.replace('streets/', ''))
+    const updatedStreets: Streets = await this.getDB(`rooms/${room}/streets`)
+
+    return { streets: updatedStreets, name: street.name, fold }
+  }
+
+  async redemptionStreet(redemptionDto: RedemptionDto) {
+    const { room, path } = redemptionDto
+
+    await this.database.ref(`rooms/${room}/${path}/isPledged`).set(false)
+    const street: Street = await this.getDB(`rooms/${room}/${path}`)
+
+    await this.updateStreet({ path, room, street })
+
+    await this.reloadBoughtColor(room, path)
+    await this.foldOtherRent(room, street.rent, path.replace('streets/', ''))
+    const updatedStreets: Streets = await this.getDB(`rooms/${room}/streets`)
+
+    return { streets: updatedStreets, name: street.name }
+  }
+
+  async onPledgeRailroad(pledgeDto: PledgeDto, isPledged: boolean) {
+    const { room, path } = pledgeDto
+    await this.updateRailroad({ path, room, railroad: { isPledged } })
+    const name = await this.getDB<string>(`rooms/${room}/${path}/name`)
+    const updatedRailroads = await this.getDB<Railroad[]>(`rooms/${room}/railroads`)
+    return { railroads: updatedRailroads, name }
+  }
+
+  async onPledgeCompany(pledgeDto: PledgeDto, isPledged: boolean) {
+    const { room, path } = pledgeDto
+    await this.updateCompanies({ path, room, companies: { isPledged } })
+    const name = await this.getDB<string>(`rooms/${room}/${path}/name`)
+    const updatedCompanies = await this.getDB<Company[]>(`rooms/${room}/companies`)
+    return { companies: updatedCompanies, name }
   }
 }

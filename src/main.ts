@@ -15,14 +15,13 @@ const bootstrap = async () => {
   const app = await NestFactory.create(AppModule, process.env.NODE_ENV === 'development' ? { httpsOptions } : {})
 
   const configService: ConfigService = app.get(ConfigService)
-  // Set the config options
 
   app.enableCors({ origin: '*', credentials: true })
 
   app.useGlobalInterceptors()
 
   await app.listen(configService.get<string>('API_PORT') ?? 3500)
-  console.log(`Application is running on: ${await app.getUrl()}/`)
+  console.log('Application is running on: ' + '\x1b[33m', `[${await app.getUrl()}/]`)
 }
 
 bootstrap()

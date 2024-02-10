@@ -12,7 +12,7 @@ export class CreateConfirmDto {
 
   @IsNumber()
   @IsNotEmpty()
-  boardId: number
+  room: number
 }
 
 export class AcceptConfirmDto {
@@ -22,6 +22,6 @@ export class AcceptConfirmDto {
 
   @IsNumber()
   @IsNotEmpty()
-  boardId: number
+  room: number
 }
 export class CancelConfirmDto extends AcceptConfirmDto {}

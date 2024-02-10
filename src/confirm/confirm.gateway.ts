@@ -1,5 +1,5 @@
-import { ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets'
-import { Server, Socket } from 'socket.io'
+import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets'
+import { Server } from 'socket.io'
 import { ConfirmService } from './confirm.service'
 import { AcceptConfirmDto, CancelConfirmDto, CreateConfirmDto } from './dto'
 
@@ -13,19 +13,18 @@ export class ConfirmGateway {
   constructor(private readonly confirmService: ConfirmService) {}
 
   @SubscribeMessage('createConfirm')
-  async create(@MessageBody() createConfirmDto: CreateConfirmDto, @ConnectedSocket() client: Socket) {
-    const userId = +client.handshake.auth['id']
-    // const { confirm, gamerId } = await this.confirmService.create(createConfirmDto, userId);
-    // this.server.emit(`getConfirm:${gamerId}`, confirm);
+  async create(@MessageBody() createConfirmDto: CreateConfirmDto) {
+    const { confirm, gamerId } = await this.confirmService.create(createConfirmDto)
+    this.server.emit(`getConfirm:${gamerId}`, confirm)
   }
 
   @SubscribeMessage('acceptConfirm')
   async accept(@MessageBody() acceptConfirmDto: AcceptConfirmDto) {
-    // const room = await this.confirmService.accept(acceptConfirmDto);
-    // this.server.emit(`getRoom:${acceptConfirmDto.boardId}`, room);
+    const room = await this.confirmService.accept(acceptConfirmDto)
+    this.server.emit(`getRoom:${acceptConfirmDto.room}`, room)
   }
   @SubscribeMessage('cancelConfirm')
   cancel(@MessageBody() cancelConfirmDto: CancelConfirmDto) {
-    // this.confirmService.cancel(cancelConfirmDto);
+    this.confirmService.cancel(cancelConfirmDto)
   }
 }

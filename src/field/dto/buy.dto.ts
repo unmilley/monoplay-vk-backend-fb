@@ -10,6 +10,9 @@ export class BuyDto {
   room: number
 }
 
+export class PledgeDto extends BuyDto {}
+export class RedemptionDto extends BuyDto {}
+
 export class BuyPropertyDto {
   @IsString()
   @IsNotEmpty()
