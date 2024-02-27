@@ -10,3 +10,12 @@ export class UpdateUserDto extends PartialType(InitUserDto) {
   @IsPositive()
   room: number
 }
+
+export class UpdateUserLossDto extends PartialType(InitUserDto) {
+  @IsNumber()
+  loss: number
+}
+export class UpdateUserEarnDto extends PartialType(InitUserDto) {
+  @IsNumber()
+  earnings: number
+}

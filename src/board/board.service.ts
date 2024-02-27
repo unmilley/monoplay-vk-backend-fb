@@ -28,7 +28,14 @@ export class BoardService {
     return result
   }
 
+  async checkRoom(room: number) {
+    const id: number = await this.getDB(`rooms/${room}/id`)
+    return !!id
+  }
+
   async loadRoom(room: number, userId: number) {
+    const isRoom = await this.checkRoom(room)
+    if (!isRoom) return ''
     await this.gamerService.createGamer({ room, userId })
     await this.userService.update({ id: userId, room })
     return await this.initRoom(userId, false)

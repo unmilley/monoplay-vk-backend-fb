@@ -4,6 +4,7 @@ import { HttpsOptions } from '@nestjs/common/interfaces/external/https-options.i
 import * as fs from 'fs'
 import { AppModule } from './app.module'
 
+import { Logger } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 
 const httpsOptions: HttpsOptions = {
@@ -21,7 +22,8 @@ const bootstrap = async () => {
   app.useGlobalInterceptors()
 
   await app.listen(configService.get<string>('API_PORT') ?? 3500)
-  console.log('Application is running on: ' + '\x1b[33m', `[${await app.getUrl()}/]`)
+  // console.log('Application is running on: ' + '\x1b[33m', `[${await app.getUrl()}/]`)
+  Logger.log(`${await app.getUrl()}/`, 'Application is running on:')
 }
 
 bootstrap()

@@ -40,7 +40,7 @@ export class DiceService {
 
     if (!dice) return { room, users: [] }
 
-    dice = this.moveLastElementToFirst(dice)
+    dice = this.moveFirstElementToLast(dice)
     await this.database.ref(`rooms/${room}/dice`).update({ ...dice })
     return { room, users: dice }
   }
@@ -54,6 +54,11 @@ export class DiceService {
   private moveLastElementToFirst(array: number[]): number[] {
     const lastElement = array.pop()
     array.unshift(lastElement!)
+    return array
+  }
+  private moveFirstElementToLast(array: number[]): number[] {
+    const firstElement = array.shift()
+    array.push(firstElement!)
     return array
   }
 }

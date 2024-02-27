@@ -1,10 +1,7 @@
-import type { Database } from 'firebase-admin/lib/database/database'
-
+import { FirebaseService, type Database } from '@firebase/firebase.service'
 import { Injectable } from '@nestjs/common'
 import { User } from '@types'
-import { FirebaseService } from 'src/firebase/firebase.service'
-import { InitUserDto } from './dto'
-import { UpdateUserDto } from './dto/update-user.dto'
+import type { InitUserDto, UpdateUserDto, UpdateUserEarnDto, UpdateUserLossDto } from './dto'
 
 @Injectable()
 export class UserService {
@@ -12,14 +9,23 @@ export class UserService {
   constructor(private readonly firebaseService: FirebaseService) {
     this.database = this.firebaseService.database
   }
+  private async getDB<T>(path: string): Promise<T> {
+    const result: T = (await this.database.ref(path).get()).val()
+    return result
+  }
+
   async create(initUserDto: InitUserDto): Promise<User> {
     const { id, lastName, firstName } = initUserDto
     const data: User = {
       id: +id,
       firstName,
       lastName,
+      earnings: 0,
+      loss: 0,
       room: 0,
+      createAt: new Date().toISOString(),
       useRofls: false,
+      keys: 3,
     }
     await this.database.ref(`users/${id}`).set(data)
     return data
@@ -42,5 +48,18 @@ export class UserService {
 
     const user = await this.get(id)
     if (user) return user
+  }
+
+  async loss(lossDto: UpdateUserLossDto) {
+    const { id, loss } = lossDto
+    if (!id) return
+    const money = await this.getDB<number>(`users/${id}/loss`)
+    await this.database.ref(`users/${id}`).update({ loss: money + loss })
+  }
+  async earn(earnDto: UpdateUserEarnDto) {
+    const { id, earnings } = earnDto
+    if (!id) return
+    const money = await this.getDB<number>(`users/${id}/earnings`)
+    await this.database.ref(`users/${id}`).update({ earnings: money + earnings })
   }
 }
